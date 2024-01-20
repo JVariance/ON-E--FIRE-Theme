@@ -1,0 +1,15 @@
+{
+	"manifest_version": 2,
+	"name": "ON(E) FIRE Theme for Firefox",
+	"version": "0.0.1",
+	"description": "A theme and userChrome file for Firefox that imitate Opera One's theme.",
+	"{{firefox}}.permissions": ["theme"],
+	"{{firefox}}.browser_specific_settings": {
+		"gecko": {
+			"id": "{bb67c21a-82af-423a-81b7-f3bf89188d75}"
+		}
+	},
+	"background": {
+		"{{firefox}}.scripts": ["src/background/background.ts"]
+	}
+}

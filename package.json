@@ -1,0 +1,19 @@
+{
+	"name": "on_e-fire-theme-for-firefox",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build"
+	},
+	"devDependencies": {
+		"@types/webextension-polyfill": "^0.10.7",
+		"tslib": "^2.6.2",
+		"typescript": "^5.3.3",
+		"vite": "^5.0.11",
+		"vite-plugin-web-extension": "^4.1.1",
+		"webextension-polyfill": "^0.10.0"
+	},
+	"dependencies": {}
+}
