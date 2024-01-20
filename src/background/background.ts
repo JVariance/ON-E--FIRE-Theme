@@ -16,8 +16,8 @@ const themes: Record<ThemeKey, Theme> = {
 			popup_text: "rgb(0, 0, 0)",
 			button_background_active: "rgb(231, 237, 241)",
 			button_background_hover: "rgb(214, 224, 231)",
-			sidebar_highlight_text: "rgb(255, 255, 255)",
-			sidebar_highlight: "rgb(80, 33, 255)",
+			sidebar_highlight: "rgb(235, 245, 251)",
+			sidebar_highlight_text: "rgb(0, 0, 0)",
 			sidebar: "rgb(255, 255, 255)",
 			tab_loading: "rgb(200, 227, 255)",
 		},
@@ -35,8 +35,8 @@ const themes: Record<ThemeKey, Theme> = {
 			popup_text: "rgb(255, 255, 255)",
 			button_background_active: "rgb(72, 77, 101)",
 			button_background_hover: "rgb(72, 77, 100)",
+			sidebar_highlight: "rgb(64, 83, 102)",
 			sidebar_highlight_text: "rgb(255, 255, 255)",
-			sidebar_highlight: "rgb(80, 33, 255)",
 			sidebar_text: "rgb(255, 255, 255)",
 			sidebar: "rgb(37, 40, 53)",
 			tab_selected: "rgb(58, 62, 84)",
@@ -48,14 +48,11 @@ const themes: Record<ThemeKey, Theme> = {
 let currentTheme: ThemeKey;
 
 function setTheme(theme: ThemeKey) {
+	Browser.theme.getCurrent().then((theme) => console.log({ theme }));
 	if (currentTheme === theme) return;
 	currentTheme = theme;
 	Browser.theme.update(themes[theme]);
 }
-
-// Browser.theme.onUpdated.addListener((updateInfo) => {
-// 	let a = updateInfo.theme;
-// });
 
 const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 setTheme(darkThemeMq.matches ? "dark" : "light");

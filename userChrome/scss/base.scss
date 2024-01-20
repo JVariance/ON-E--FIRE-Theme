@@ -12,30 +12,153 @@
 :root {
 	--gap: 0.25rem;
 	--radius: 6px;
-	--base-bg: var(--lwt-accent-color, #fbfbfb);
-	--sidebar-bg: #fff;
-	--sidebar-search-box-bg: #e6eef5;
-	--tab-island-bg: #e7edf1;
-	--tab-island-blue: #2e78f6;
-	--tab-island-turqouise: #7bc6d7;
-	--tab-island-green: #57bf94;
-	--tab-island-lightgreen: #99d17b;
-	--tab-island-yellow: #eec574;
-	--tab-island-orange: #ef8d4b;
-	--tab-island-red: #e24c5e;
-	--tab-island-pink: #f26ca7;
-	--tab-island-purple: #aa78df;
-	--tab-island-tomato: #d62246;
-	--tab-island-toolbar: #858585;
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin withDefaultColors {
 	:root {
-		--base-bg: var(--lwt-accent-color, #111);
-		--sidebar-bg: #252835;
-		--sidebar-search-box-bg: #030615;
-		--tab-island-bg: #1a1d2b;
+		--base-bg: #d0dbe3;
+		--titlebar-bg: transparent;
+		--toolbar-bg: #fff;
+		--searchbar-bg: #fff;
+		--searchbar-focus-bg: #e7edf1;
+		--sidebar-bg: #fff;
+		--searchbar-color: #000;
+		--sidebar-search-box-bg: #e6eef5;
+		--sidebar-search-image-filter: unset;
+		--toolbar-btn-bg: #e7edf1;
+		--tab-island-bg: #e7edf1;
+		--tab-island-blue: #2e78f6;
+		--tab-island-turqouise: #7bc6d7;
+		--tab-island-green: #57bf94;
+		--tab-island-lightgreen: #99d17b;
+		--tab-island-yellow: #eec574;
+		--tab-island-orange: #ef8d4b;
+		--tab-island-red: #e24c5e;
+		--tab-island-pink: #f26ca7;
+		--tab-island-purple: #aa78df;
+		--tab-island-tomato: #d62246;
+		--tab-island-toolbar: #858585;
+		--opera-folder-bg: #a8abad;
+		--opera-folder-bg-opacity: 1;
 	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--base-bg: #030614;
+			--toolbar-bg: #252835;
+			--searchbar-bg: #252835;
+			--searchbar-color: #fff;
+			--searchbar-focus-bg: #484d64;
+			--sidebar-bg: #252835;
+			--sidebar-search-box-bg: #030615;
+			--toolbar-btn-bg: #1a1d2b;
+			--tab-island-bg: #1a1d2b;
+		}
+	}
+}
+
+@mixin withoutDefaultColors {
+	:root {
+		--base-bg: var(--lwt-accent-color, #fbfbfb);
+		--titlebar-bg: var(--lwt-accent-color, transparent);
+		--searchbar-bg: var(--toolbar-field-background-color, transparent);
+		--searchbar-color: var(--toolbar-field-color, currentColor);
+		--toolbar-bg: color-mix(
+			in hsl,
+			var(
+					--toolbar-bgcolor,
+					var(--lwt-accent-color, var(--toolbar-bg-color, white))
+				)
+				90%,
+			black
+		);
+		--sidebar-bg: color-mix(
+			in hsl,
+			var(
+					--lwt-accent-color,
+					var(--sidebar-background-color, var(--toolbar-bg-color, white))
+				)
+				90%,
+			black
+		);
+		--sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
+		--sidebar-search-image-filter: brightness(0) opacity(0.5);
+		--toolbar-btn-bg: color-mix(
+			in hsl,
+			var(--toolbar-bgcolor, white) 90%,
+			black
+		);
+		--tab-island-bg: color-mix(
+			in hsl,
+			var(--lwt-accent-color, var(--toolbar-bgcolor, white)) 95%,
+			black
+		);
+		--tab-island-blue: #2e78f6;
+		--tab-island-turqouise: #7bc6d7;
+		--tab-island-green: #57bf94;
+		--tab-island-lightgreen: #99d17b;
+		--tab-island-yellow: #eec574;
+		--tab-island-orange: #ef8d4b;
+		--tab-island-red: #e24c5e;
+		--tab-island-pink: #f26ca7;
+		--tab-island-purple: #aa78df;
+		--tab-island-tomato: #d62246;
+		--tab-island-toolbar: #858585;
+		--opera-folder-bg: black;
+		--opera-folder-bg-opacity: 0.5;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--base-bg: var(--lwt-accent-color, #111);
+			--toolbar-bg: color-mix(
+				in hsl,
+				var(
+						--toolbar-bgcolor,
+						var(--lwt-accent-color, var(--toolbar-bg-color, black))
+					)
+					90%,
+				white
+			);
+			--sidebar-bg: color-mix(
+				in hsl,
+				var(
+						--lwt-accent-color,
+						var(--sidebar-background-color, var(--toolbar-bg-color, #252835))
+					)
+					90%,
+				white
+			);
+			--sidebar-search-box-bg: color-mix(in hsl, white 10%, transparent);
+			--sidebar-search-image-filter: brightness(2) opacity(0.5);
+			--toolbar-btn-bg: color-mix(
+				in hsl,
+				var(--toolbar-bgcolor, black) 90%,
+				white
+			);
+			--tab-island-bg: color-mix(
+				in hsl,
+				var(--lwt-accent-color, var(--toolbar-bgcolor, black) 95%, white)
+			);
+			--opera-folder-bg: white;
+		}
+	}
+}
+
+@media (-moz-bool-pref("onefire.without-default-colors", true)) {
+	@include withoutDefaultColors;
+}
+
+@media (-moz-bool-pref: "onefire.without-default-colors") {
+	@include withoutDefaultColors;
+}
+
+@media (-moz-bool-pref("onefire.without-default-colors", false)) {
+	@include withDefaultColors;
+}
+
+@media not (-moz-bool-pref: "onefire.without-default-colors") {
+	@include withDefaultColors;
 }
 
 #browser {
@@ -77,7 +200,7 @@
 	border: none !important;
 	border-radius: var(--radius);
 	container-type: inline-size;
-	background: var(--sidebar-background-color, var(--sidebar-bg));
+	background: var(--sidebar-bg);
 
 	#sidebar-switcher-target {
 		width: 100%;
@@ -106,7 +229,24 @@
 #sidebar {
 	border-radius: var(--radius);
 	margin-top: var(--gap);
-	background: var(--sidebar-background-color, var(--sidebar-bg));
+	background: var(--sidebar-bg);
+}
+
+.sidebar-panel[lwt-sidebar] {
+	background: transparent !important;
+}
+
+@-moz-document url("chrome://browser/content/syncedtabs/sidebar.xhtml")
+{
+	html,
+	body {
+		background-color: transparent !important;
+	}
+}
+
+#urlbar-background {
+	background: var(--searchbar-bg) !important;
+	color: var(--searchbar-color) !important;
 }
 
 #appcontent {
@@ -143,7 +283,7 @@
 /*_______________________________*/
 
 #titlebar {
-	background: var(--lwt-accent-color);
+	background: var(--titlebar-bg) !important;
 	margin-top: var(--gap) !important;
 	margin-inline: calc(var(--gap) / 2) !important;
 }
@@ -154,6 +294,7 @@
 	margin-top: var(--gap);
 	/* margin-top: -1px; */
 	margin-inline: var(--gap);
+	background: var(--toolbar-bg) !important;
 }
 
 .titlebar-close,
@@ -172,7 +313,7 @@
 
 #navigator-toolbox {
 	border-bottom: none !important;
-	background: var(--base-bg);
+	background: var(--base-bg) !important;
 	margin-bottom: 0 !important;
 }
 
@@ -220,7 +361,7 @@ toolbarspring {
 
 #nav-bar-customization-target toolbaritem[data-extensionid] {
 	toolbarbutton {
-		background: var(--tab-island-bg) !important;
+		background: var(--toolbar-btn-bg) !important;
 	}
 }
 
