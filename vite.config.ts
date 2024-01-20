@@ -18,7 +18,6 @@ export default defineConfig({
 		drop: ["console", "debugger"],
 	},
 	plugins: [
-		svelte(),
 		webExtension({
 			manifest: generateManifest,
 			browser: "firefox",
