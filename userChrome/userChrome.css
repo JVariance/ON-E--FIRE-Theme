@@ -2,7 +2,10 @@
   Opera One Light Theme: https://color.firefox.com/?theme=XQAAAAKxAQAAAAAAAABBKYhm849SCia9U4KEGccwS-xMDPsqvXkIbAF6EJDWcx9sS_Bi3JZGE6ZZI2STfI2PTljkkz9gsyIAA4rg52EZbTFyuKwnXxno8392VlMcfZhPucRqNGYDAVZm1opH4-iMGRiqc3B9c1MPPmK53DSbJF8BZdZKpzfDapCiycb_zxKAlo4jW4PfG1z2lRJRtFFASfzKLXhmCrO_Cn8HSd8A9oLncObfGBEPHudnhpytIYZxPf5D7U0MJhJvX9gYclL68q1YjWOTY3cft5CVKtOBjKX3Geb_lJsoAA
 
   Opera One Dark Theme: https://color.firefox.com/?theme=XQAAAALbAQAAAAAAAABBKYhm849SCicxcT-BCXcGHf3p79EhVPYPRdriUDkvBpmWysCv-Zw_c6APJcQtt-XOfHhINmc-3uImDNBOA4JD37r_S9CeYgHzlx6KEeFqpy4LBxxPJVVi1JFKzHFodzdIsDTMxAcZkU199kc1jW3kJg2QniVg8jvUHvlSEd5MjQHBlj21ngkz_KIpbwB5scQ4tJVAJ0eAIP8PyiE05XWran2hih3l985u-lZJIrj6BV1eI71A8zYb_RcXr_aND59iCJoKeE08m9aa5VZOJey68VepM8kC7k5PgOKr9vLiGV-gaByYTFIpj6GHe8Ujrw9Y_lXNXw
-*/
+
+	Custom:
+		brown: https://color.firefox.com/?theme=XQAAAAL0AQAAAAAAAABBKYhm849SCicxcT_m3XcGHf3p79EhVPWpinvxzYs-OyjWwgC4cCxwdhMGJnUGuoZuEbNGXq6DyqgZeeoJvSAAq83TLPO0nd3DjAUR2QYhhzfEa19EWMa95FBzFwkzxpLiUXulKonO44Cc-aegbsLDtpONZ_ZUJVF2UGeqVMswmR7WyASGT706JrXCvrR3QjDhrnczFv2u8_mKIE1f-29JD3Ta1DZhLGlNwIoi3oZlU7HL2Xy5qLJBKvtpr0qehNH3eHpgUTCXO31T8hQmhbWNQ0ZBx2U45KX4OIgcUJcF-t2h4J9buqtL0P__Xw09AA
+	*/
 /*
   widget.non-native-theme.scrollbar.size.override = 12
   widget.non-native-theme.scrollbar.style = 2
@@ -12,59 +15,94 @@
   --radius: 6px;
 }
 
-@media (-moz-bool-pref("onefire.without-default-colors", true)) {
-  :root {
-    --base-bg: var(--lwt-accent-color, #fbfbfb);
-    --titlebar-bg: var(--lwt-accent-color, transparent);
-    --searchbar-bg: var(--toolbar-field-background-color, transparent);
-    --searchbar-color: var(--toolbar-field-color, currentColor);
-    --toolbar-bg: color-mix(
-    	in hsl,
-    	var(
-    			--toolbar-bgcolor,
-    			var(--lwt-accent-color, var(--toolbar-bg-color, white))
-    		)
-    		90%,
-    	black
-    );
-    --sidebar-bg: color-mix(
-    	in hsl,
-    	var(
-    			--lwt-accent-color,
-    			var(--sidebar-background-color, var(--toolbar-bg-color, white))
-    		)
-    		90%,
-    	black
-    );
-    --sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
-    --sidebar-search-image-filter: brightness(0) opacity(0.5);
-    --toolbar-btn-bg: color-mix(
-    	in hsl,
-    	var(--toolbar-bgcolor, white) 90%,
-    	black
-    );
-    --tab-island-bg: color-mix(
-    	in hsl,
-    	var(--lwt-accent-color, var(--toolbar-bgcolor, white)) 95%,
-    	black
-    );
-    --tab-island-blue: #2e78f6;
-    --tab-island-turqouise: #7bc6d7;
-    --tab-island-green: #57bf94;
-    --tab-island-lightgreen: #99d17b;
-    --tab-island-yellow: #eec574;
-    --tab-island-orange: #ef8d4b;
-    --tab-island-red: #e24c5e;
-    --tab-island-pink: #f26ca7;
-    --tab-island-purple: #aa78df;
-    --tab-island-tomato: #d62246;
-    --tab-island-toolbar: #858585;
-    --opera-folder-bg: black;
-    --opera-folder-bg-opacity: 0.5;
+:root:not(:-moz-lwtheme) {
+  --base-bg: #d0dbe3;
+  --titlebar-bg: transparent;
+  --toolbar-bg: #fff;
+  --tab-selected-bg: #ffffff;
+  --searchbar-bg: #fff;
+  --searchbar-focus-bg: #e7edf1;
+  --sidebar-bg: #fff;
+  --searchbar-color: #000;
+  --sidebar-search-box-bg: color-mix(in hsl, white 20%, transparent);
+  --sidebar-search-image-filter: brightness(0) opacity(0.5);
+  --toolbar-btn-bg: #e7edf1;
+  --tab-island-bg: #e7edf1;
+  --tab-island-blue: #2e78f6;
+  --tab-island-turqouise: #7bc6d7;
+  --tab-island-green: #57bf94;
+  --tab-island-lightgreen: #99d17b;
+  --tab-island-yellow: #eec574;
+  --tab-island-orange: #ef8d4b;
+  --tab-island-red: #e24c5e;
+  --tab-island-pink: #f26ca7;
+  --tab-island-purple: #aa78df;
+  --tab-island-tomato: #d62246;
+  --tab-island-toolbar: #858585;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(:-moz-lwtheme) {
+    --base-bg: #030614;
+    --toolbar-bg: #252835;
+    --tab-selected-bg: #3a3e54;
+    --searchbar-bg: #252835;
+    --searchbar-color: #fff;
+    --searchbar-focus-bg: #484d64;
+    --sidebar-bg: #252835;
+    --sidebar-search-box-bg: color-mix(in hsl, black 20%, transparent);
+    --sidebar-search-image-filter: brightness(2) opacity(0.5);
+    --toolbar-btn-bg: #1a1d2b;
+    --tab-island-bg: #1a1d2b;
   }
 }
-@media (-moz-bool-pref("onefire.without-default-colors", true)) and (prefers-color-scheme: dark) {
-  :root {
+:root:-moz-lwtheme {
+  --base-bg: var(--lwt-accent-color, #fbfbfb);
+  --titlebar-bg: var(--lwt-accent-color, transparent);
+  --searchbar-bg: var(--toolbar-field-background-color, transparent);
+  --searchbar-color: var(--toolbar-field-color, currentColor);
+  --tab-selected-bg: var(--tab-selected-bgcolor, white);
+  --toolbar-bg: color-mix(
+  	in hsl,
+  	var(
+  			--toolbar-bgcolor,
+  			var(--lwt-accent-color, var(--toolbar-bg-color, white))
+  		)
+  		90%,
+  	black
+  );
+  --sidebar-bg: color-mix(
+  	in hsl,
+  	var(
+  			--lwt-accent-color,
+  			var(--sidebar-background-color, var(--toolbar-bg-color, white))
+  		)
+  		90%,
+  	black
+  );
+  --sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
+  --sidebar-search-image-filter: brightness(0) opacity(0.5);
+  --toolbar-btn-bg: color-mix(in hsl, var(--toolbar-bgcolor, white) 95%, black);
+  --tab-island-bg: color-mix(
+  	in hsl,
+  	var(--lwt-accent-color, var(--toolbar-bgcolor, white)) 95%,
+  	black
+  );
+  --tab-island-blue: #2e78f6;
+  --tab-island-turqouise: #7bc6d7;
+  --tab-island-green: #57bf94;
+  --tab-island-lightgreen: #99d17b;
+  --tab-island-yellow: #eec574;
+  --tab-island-orange: #ef8d4b;
+  --tab-island-red: #e24c5e;
+  --tab-island-pink: #f26ca7;
+  --tab-island-purple: #aa78df;
+  --tab-island-tomato: #d62246;
+  --tab-island-toolbar: #858585;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:-moz-lwtheme {
     --base-bg: var(--lwt-accent-color, #111);
     --toolbar-bg: color-mix(
     	in hsl,
@@ -75,6 +113,7 @@
     		90%,
     	white
     );
+    --tab-selected-bg: var(--tab-selected-bgcolor, #111111);
     --sidebar-bg: color-mix(
     	in hsl,
     	var(
@@ -88,182 +127,26 @@
     --sidebar-search-image-filter: brightness(2) opacity(0.5);
     --toolbar-btn-bg: color-mix(
     	in hsl,
-    	var(--toolbar-bgcolor, black) 90%,
+    	var(--toolbar-bgcolor, black) 95%,
     	white
     );
     --tab-island-bg: color-mix(
     	in hsl,
-    	var(--lwt-accent-color, var(--toolbar-bgcolor, black) 95%, white)
-    );
-    --opera-folder-bg: white;
-  }
-}
-@media (-moz-bool-pref: onefire.without-default-colors) {
-  :root {
-    --base-bg: var(--lwt-accent-color, #fbfbfb);
-    --titlebar-bg: var(--lwt-accent-color, transparent);
-    --searchbar-bg: var(--toolbar-field-background-color, transparent);
-    --searchbar-color: var(--toolbar-field-color, currentColor);
-    --toolbar-bg: color-mix(
-    	in hsl,
-    	var(
-    			--toolbar-bgcolor,
-    			var(--lwt-accent-color, var(--toolbar-bg-color, white))
-    		)
-    		90%,
-    	black
-    );
-    --sidebar-bg: color-mix(
-    	in hsl,
-    	var(
-    			--lwt-accent-color,
-    			var(--sidebar-background-color, var(--toolbar-bg-color, white))
-    		)
-    		90%,
-    	black
-    );
-    --sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
-    --sidebar-search-image-filter: brightness(0) opacity(0.5);
-    --toolbar-btn-bg: color-mix(
-    	in hsl,
-    	var(--toolbar-bgcolor, white) 90%,
-    	black
-    );
-    --tab-island-bg: color-mix(
-    	in hsl,
-    	var(--lwt-accent-color, var(--toolbar-bgcolor, white)) 95%,
-    	black
-    );
-    --tab-island-blue: #2e78f6;
-    --tab-island-turqouise: #7bc6d7;
-    --tab-island-green: #57bf94;
-    --tab-island-lightgreen: #99d17b;
-    --tab-island-yellow: #eec574;
-    --tab-island-orange: #ef8d4b;
-    --tab-island-red: #e24c5e;
-    --tab-island-pink: #f26ca7;
-    --tab-island-purple: #aa78df;
-    --tab-island-tomato: #d62246;
-    --tab-island-toolbar: #858585;
-    --opera-folder-bg: black;
-    --opera-folder-bg-opacity: 0.5;
-  }
-}
-@media (-moz-bool-pref: onefire.without-default-colors) and (prefers-color-scheme: dark) {
-  :root {
-    --base-bg: var(--lwt-accent-color, #111);
-    --toolbar-bg: color-mix(
-    	in hsl,
-    	var(
-    			--toolbar-bgcolor,
-    			var(--lwt-accent-color, var(--toolbar-bg-color, black))
-    		)
-    		90%,
+    	var(--lwt-accent-color, var(--toolbar-bgcolor, black)) 95%,
     	white
     );
-    --sidebar-bg: color-mix(
-    	in hsl,
-    	var(
-    			--lwt-accent-color,
-    			var(--sidebar-background-color, var(--toolbar-bg-color, #252835))
-    		)
-    		90%,
-    	white
-    );
-    --sidebar-search-box-bg: color-mix(in hsl, white 10%, transparent);
-    --sidebar-search-image-filter: brightness(2) opacity(0.5);
-    --toolbar-btn-bg: color-mix(
-    	in hsl,
-    	var(--toolbar-bgcolor, black) 90%,
-    	white
-    );
-    --tab-island-bg: color-mix(
-    	in hsl,
-    	var(--lwt-accent-color, var(--toolbar-bgcolor, black) 95%, white)
-    );
-    --opera-folder-bg: white;
   }
 }
-@media (-moz-bool-pref("onefire.without-default-colors", false)) {
-  :root {
-    --base-bg: #d0dbe3;
-    --titlebar-bg: transparent;
-    --toolbar-bg: #fff;
-    --searchbar-bg: #fff;
-    --searchbar-focus-bg: #e7edf1;
-    --sidebar-bg: #fff;
-    --searchbar-color: #000;
-    --sidebar-search-box-bg: #e6eef5;
-    --sidebar-search-image-filter: unset;
-    --toolbar-btn-bg: #e7edf1;
-    --tab-island-bg: #e7edf1;
-    --tab-island-blue: #2e78f6;
-    --tab-island-turqouise: #7bc6d7;
-    --tab-island-green: #57bf94;
-    --tab-island-lightgreen: #99d17b;
-    --tab-island-yellow: #eec574;
-    --tab-island-orange: #ef8d4b;
-    --tab-island-red: #e24c5e;
-    --tab-island-pink: #f26ca7;
-    --tab-island-purple: #aa78df;
-    --tab-island-tomato: #d62246;
-    --tab-island-toolbar: #858585;
-    --opera-folder-bg: #a8abad;
-    --opera-folder-bg-opacity: 1;
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+  @media (-moz-bool-pref: onefire.without-default-colors) {
+    :root {
+      --toolbar-bg: green !important;
+    }
   }
-}
-@media (-moz-bool-pref("onefire.without-default-colors", false)) and (prefers-color-scheme: dark) {
-  :root {
-    --base-bg: #030614;
-    --toolbar-bg: #252835;
-    --searchbar-bg: #252835;
-    --searchbar-color: #fff;
-    --searchbar-focus-bg: #484d64;
-    --sidebar-bg: #252835;
-    --sidebar-search-box-bg: #030615;
-    --toolbar-btn-bg: #1a1d2b;
-    --tab-island-bg: #1a1d2b;
-  }
-}
-@media not (-moz-bool-pref: onefire.without-default-colors) {
-  :root {
-    --base-bg: #d0dbe3;
-    --titlebar-bg: transparent;
-    --toolbar-bg: #fff;
-    --searchbar-bg: #fff;
-    --searchbar-focus-bg: #e7edf1;
-    --sidebar-bg: #fff;
-    --searchbar-color: #000;
-    --sidebar-search-box-bg: #e6eef5;
-    --sidebar-search-image-filter: unset;
-    --toolbar-btn-bg: #e7edf1;
-    --tab-island-bg: #e7edf1;
-    --tab-island-blue: #2e78f6;
-    --tab-island-turqouise: #7bc6d7;
-    --tab-island-green: #57bf94;
-    --tab-island-lightgreen: #99d17b;
-    --tab-island-yellow: #eec574;
-    --tab-island-orange: #ef8d4b;
-    --tab-island-red: #e24c5e;
-    --tab-island-pink: #f26ca7;
-    --tab-island-purple: #aa78df;
-    --tab-island-tomato: #d62246;
-    --tab-island-toolbar: #858585;
-    --opera-folder-bg: #a8abad;
-    --opera-folder-bg-opacity: 1;
-  }
-}
-@media (not (-moz-bool-pref: onefire.without-default-colors)) and (prefers-color-scheme: dark) {
-  :root {
-    --base-bg: #030614;
-    --toolbar-bg: #252835;
-    --searchbar-bg: #252835;
-    --searchbar-color: #fff;
-    --searchbar-focus-bg: #484d64;
-    --sidebar-bg: #252835;
-    --sidebar-search-box-bg: #030615;
-    --toolbar-btn-bg: #1a1d2b;
-    --tab-island-bg: #1a1d2b;
+  @media not (-moz-bool-pref: onefire.without-default-colors) {
+    :root {
+      --toolbar-bg: green !important;
+    }
   }
 }
 #browser {
@@ -304,7 +187,7 @@
   border: none !important;
   border-radius: var(--radius);
   container-type: inline-size;
-  background: var(--sidebar-bg);
+  background: var(--sidebar-bg) !important;
 }
 #sidebar-header #sidebar-switcher-target {
   width: 100%;
@@ -328,9 +211,9 @@
 }
 
 #sidebar {
-  border-radius: var(--radius);
-  margin-top: var(--gap);
-  background: var(--sidebar-bg);
+  border-radius: var(--radius) !important;
+  margin-top: var(--gap) !important;
+  background: var(--sidebar-bg) !important;
 }
 
 .sidebar-panel[lwt-sidebar] {
@@ -372,6 +255,9 @@
   --identity-icon-color: transparent !important;
   height: 34px !important;
 }
+.tabbrowser-tab[selected=true] .tab-background {
+  background: var(--tab-selected-bg) !important;
+}
 
 #tabbrowser-arrowscrollbox {
   height: 34px !important;
@@ -410,7 +296,6 @@
 
 #navigator-toolbox {
   border-bottom: none !important;
-  background: var(--base-bg) !important;
   margin-bottom: 0 !important;
 }
 
@@ -915,9 +800,18 @@ toolbarspring + toolbarspring + toolbarspring + toolbarspring {
   height: 0.1rem !important;
 }
 .sidebar-placesTree treechildren::-moz-tree-image(container) {
+  --opera-folder-bg: black;
+  --opera-folder-bg-opacity: 0.5;
   -moz-context-properties: fill, fill-opacity;
   fill: var(--opera-folder-bg) !important;
   fill-opacity: var(--opera-folder-bg-opacity) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .sidebar-placesTree treechildren::-moz-tree-image(container) {
+    --opera-folder-bg: white;
+    --opera-folder-bg-opacity: 0.5;
+  }
 }
 
 /*# sourceMappingURL=userChrome.css.map */

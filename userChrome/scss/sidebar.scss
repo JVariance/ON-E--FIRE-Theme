@@ -81,8 +81,17 @@
 	}
 
 	&::-moz-tree-image(container) {
+		--opera-folder-bg: black;
+		--opera-folder-bg-opacity: 0.5;
 		-moz-context-properties: fill, fill-opacity;
 		fill: var(--opera-folder-bg) !important;
 		fill-opacity: var(--opera-folder-bg-opacity) !important;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	.sidebar-placesTree treechildren::-moz-tree-image(container) {
+		--opera-folder-bg: white;
+		--opera-folder-bg-opacity: 0.5;
 	}
 }
