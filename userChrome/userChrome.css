@@ -137,18 +137,6 @@
     );
   }
 }
-@-moz-document url("chrome://browser/content/browser.xhtml") {
-  @media (-moz-bool-pref: onefire.without-default-colors) {
-    :root {
-      --toolbar-bg: green !important;
-    }
-  }
-  @media not (-moz-bool-pref: onefire.without-default-colors) {
-    :root {
-      --toolbar-bg: green !important;
-    }
-  }
-}
 #browser {
   background: var(--base-bg);
   padding: var(--gap);
@@ -248,6 +236,7 @@
   margin-inline: var(--gap);
   /* margin-bottom: var(--gap); */
   border-radius: var(--radius);
+  background: var(--toolbar-bg) !important;
 }
 
 .tabbrowser-tab {
