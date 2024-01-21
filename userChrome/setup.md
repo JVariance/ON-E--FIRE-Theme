@@ -7,4 +7,6 @@
 - specific element with custom icon (e.g. list-style-image): -moz-context-properties: fill, stroke(, ...)
 
 #### SASS
-	sass userChrome/scss/base.scss userChrome/userChrome.css
+~~sass userChrome/scss/base.scss userChrome/userChrome.css~~
+
+	sass userChrome/src/userChromeWithDefaultColors.scss:userChrome/dist/withDefaultColors/userChrome.css userChrome/src/userChromeWithoutDefaultColors.scss:userChrome/dist/withoutDefaultColors/userChrome.css

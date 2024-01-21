@@ -5,7 +5,7 @@
 
 	Custom:
 		brown: https://color.firefox.com/?theme=XQAAAAL0AQAAAAAAAABBKYhm849SCicxcT_m3XcGHf3p79EhVPWpinvxzYs-OyjWwgC4cCxwdhMGJnUGuoZuEbNGXq6DyqgZeeoJvSAAq83TLPO0nd3DjAUR2QYhhzfEa19EWMa95FBzFwkzxpLiUXulKonO44Cc-aegbsLDtpONZ_ZUJVF2UGeqVMswmR7WyASGT706JrXCvrR3QjDhrnczFv2u8_mKIE1f-29JD3Ta1DZhLGlNwIoi3oZlU7HL2Xy5qLJBKvtpr0qehNH3eHpgUTCXO31T8hQmhbWNQ0ZBx2U45KX4OIgcUJcF-t2h4J9buqtL0P__Xw09AA
-	*/
+*/
 
 /*
   widget.non-native-theme.scrollbar.size.override = 12
@@ -17,153 +17,138 @@
 	--radius: 6px;
 }
 
-// @mixin withDefaultColors {
-:root:not(:-moz-lwtheme) {
-	--base-bg: #d0dbe3;
-	--titlebar-bg: transparent;
-	--toolbar-bg: #fff;
-	--tab-selected-bg: #ffffff;
-	--searchbar-bg: #fff;
-	--searchbar-focus-bg: #e7edf1;
-	--sidebar-bg: #fff;
-	--searchbar-color: #000;
-	// --sidebar-search-box-bg: #e6eef5;
-	--sidebar-search-box-bg: color-mix(in hsl, white 20%, transparent);
-	// --sidebar-search-image-filter: unset;
-	--sidebar-search-image-filter: brightness(0) opacity(0.5);
-	--toolbar-btn-bg: #e7edf1;
-	--tab-island-bg: #e7edf1;
-	--tab-island-blue: #2e78f6;
-	--tab-island-turqouise: #7bc6d7;
-	--tab-island-green: #57bf94;
-	--tab-island-lightgreen: #99d17b;
-	--tab-island-yellow: #eec574;
-	--tab-island-orange: #ef8d4b;
-	--tab-island-red: #e24c5e;
-	--tab-island-pink: #f26ca7;
-	--tab-island-purple: #aa78df;
-	--tab-island-tomato: #d62246;
-	--tab-island-toolbar: #858585;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root:not(:-moz-lwtheme) {
-		--base-bg: #030614;
-		--toolbar-bg: #252835;
-		--tab-selected-bg: #3a3e54;
-		--searchbar-bg: #252835;
-		--searchbar-color: #fff;
-		--searchbar-focus-bg: #484d64;
-		--sidebar-bg: #252835;
-		--sidebar-search-box-bg: color-mix(in hsl, black 20%, transparent);
-		// --sidebar-search-box-bg: #030615;
-		--sidebar-search-image-filter: brightness(2) opacity(0.5);
-		--toolbar-btn-bg: #1a1d2b;
-		--tab-island-bg: #1a1d2b;
+@if $defaultColors {
+	:root {
+		--base-bg: #d0dbe3;
+		--titlebar-bg: transparent;
+		--toolbar-bg: #fff;
+		--tab-selected-bg: #ffffff;
+		--searchbar-bg: #fff;
+		--searchbar-focus-bg: #e7edf1;
+		--sidebar-bg: #fff;
+		--searchbar-color: #000;
+		// --sidebar-search-box-bg: #e6eef5;
+		--sidebar-search-box-bg: color-mix(in hsl, white 20%, transparent);
+		// --sidebar-search-image-filter: unset;
+		--sidebar-search-image-filter: brightness(0) opacity(0.5);
+		--toolbar-btn-bg: #e7edf1;
+		--tab-island-bg: #e7edf1;
+		--tab-island-blue: #2e78f6;
+		--tab-island-turqouise: #7bc6d7;
+		--tab-island-green: #57bf94;
+		--tab-island-lightgreen: #99d17b;
+		--tab-island-yellow: #eec574;
+		--tab-island-orange: #ef8d4b;
+		--tab-island-red: #e24c5e;
+		--tab-island-pink: #f26ca7;
+		--tab-island-purple: #aa78df;
+		--tab-island-tomato: #d62246;
+		--tab-island-toolbar: #858585;
 	}
-}
-// }
 
-// @mixin withoutDefaultColors {
-:root:-moz-lwtheme {
-	--base-bg: var(--lwt-accent-color, #fbfbfb);
-	--titlebar-bg: var(--lwt-accent-color, transparent);
-	--searchbar-bg: var(--toolbar-field-background-color, transparent);
-	--searchbar-color: var(--toolbar-field-color, currentColor);
-	--tab-selected-bg: var(--tab-selected-bgcolor, white);
-	--toolbar-bg: color-mix(
-		in hsl,
-		var(
-				--toolbar-bgcolor,
-				var(--lwt-accent-color, var(--toolbar-bg-color, white))
-			)
-			90%,
-		black
-	);
-	--sidebar-bg: color-mix(
-		in hsl,
-		var(
-				--lwt-accent-color,
-				var(--sidebar-background-color, var(--toolbar-bg-color, white))
-			)
-			90%,
-		black
-	);
-	--sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
-	--sidebar-search-image-filter: brightness(0) opacity(0.5);
-	--toolbar-btn-bg: color-mix(in hsl, var(--toolbar-bgcolor, white) 95%, black);
-	--tab-island-bg: color-mix(
-		in hsl,
-		var(--lwt-accent-color, var(--toolbar-bgcolor, white)) 95%,
-		black
-	);
-	--tab-island-blue: #2e78f6;
-	--tab-island-turqouise: #7bc6d7;
-	--tab-island-green: #57bf94;
-	--tab-island-lightgreen: #99d17b;
-	--tab-island-yellow: #eec574;
-	--tab-island-orange: #ef8d4b;
-	--tab-island-red: #e24c5e;
-	--tab-island-pink: #f26ca7;
-	--tab-island-purple: #aa78df;
-	--tab-island-tomato: #d62246;
-	--tab-island-toolbar: #858585;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root:-moz-lwtheme {
-		--base-bg: var(--lwt-accent-color, #111);
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--base-bg: #030614;
+			--toolbar-bg: #252835;
+			--tab-selected-bg: #3a3e54;
+			--searchbar-bg: #252835;
+			--searchbar-color: #fff;
+			--searchbar-focus-bg: #484d64;
+			--sidebar-bg: #252835;
+			--sidebar-search-box-bg: color-mix(in hsl, black 20%, transparent);
+			// --sidebar-search-box-bg: #030615;
+			--sidebar-search-image-filter: brightness(2) opacity(0.5);
+			--toolbar-btn-bg: #1a1d2b;
+			--tab-island-bg: #1a1d2b;
+		}
+	}
+} @else {
+	:root {
+		--base-bg: var(--lwt-accent-color, #fbfbfb);
+		--titlebar-bg: var(--lwt-accent-color, transparent);
+		--searchbar-bg: var(--toolbar-field-background-color, transparent);
+		--searchbar-color: var(--toolbar-field-color, currentColor);
+		--tab-selected-bg: var(--tab-selected-bgcolor, white);
 		--toolbar-bg: color-mix(
 			in hsl,
 			var(
 					--toolbar-bgcolor,
-					var(--lwt-accent-color, var(--toolbar-bg-color, black))
+					var(--lwt-accent-color, var(--toolbar-bg-color, white))
 				)
 				90%,
-			white
+			black
 		);
-		--tab-selected-bg: var(--tab-selected-bgcolor, #111111);
 		--sidebar-bg: color-mix(
 			in hsl,
 			var(
 					--lwt-accent-color,
-					var(--sidebar-background-color, var(--toolbar-bg-color, #252835))
+					var(--sidebar-background-color, var(--toolbar-bg-color, white))
 				)
 				90%,
-			white
+			black
 		);
-		--sidebar-search-box-bg: color-mix(in hsl, white 10%, transparent);
-		--sidebar-search-image-filter: brightness(2) opacity(0.5);
+		--sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
+		--sidebar-search-image-filter: brightness(0) opacity(0.5);
 		--toolbar-btn-bg: color-mix(
 			in hsl,
-			var(--toolbar-bgcolor, black) 95%,
-			white
+			var(--toolbar-bgcolor, white) 95%,
+			black
 		);
 		--tab-island-bg: color-mix(
 			in hsl,
-			var(--lwt-accent-color, var(--toolbar-bgcolor, black)) 95%,
-			white
+			var(--lwt-accent-color, var(--toolbar-bgcolor, white)) 95%,
+			black
 		);
+		--tab-island-blue: #2e78f6;
+		--tab-island-turqouise: #7bc6d7;
+		--tab-island-green: #57bf94;
+		--tab-island-lightgreen: #99d17b;
+		--tab-island-yellow: #eec574;
+		--tab-island-orange: #ef8d4b;
+		--tab-island-red: #e24c5e;
+		--tab-island-pink: #f26ca7;
+		--tab-island-purple: #aa78df;
+		--tab-island-tomato: #d62246;
+		--tab-island-toolbar: #858585;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+			--base-bg: var(--lwt-accent-color, #111);
+			--toolbar-bg: color-mix(
+				in hsl,
+				var(
+						--toolbar-bgcolor,
+						var(--lwt-accent-color, var(--toolbar-bg-color, black))
+					)
+					90%,
+				white
+			);
+			--tab-selected-bg: var(--tab-selected-bgcolor, #111111);
+			--sidebar-bg: color-mix(
+				in hsl,
+				var(
+						--lwt-accent-color,
+						var(--sidebar-background-color, var(--toolbar-bg-color, #252835))
+					)
+					90%,
+				white
+			);
+			--sidebar-search-box-bg: color-mix(in hsl, white 10%, transparent);
+			--sidebar-search-image-filter: brightness(2) opacity(0.5);
+			--toolbar-btn-bg: color-mix(
+				in hsl,
+				var(--toolbar-bgcolor, black) 95%,
+				white
+			);
+			--tab-island-bg: color-mix(
+				in hsl,
+				var(--lwt-accent-color, var(--toolbar-bgcolor, black)) 95%,
+				white
+			);
+		}
 	}
 }
-// }
-
-// @media (-moz-bool-pref("onefire.without-default-colors", true)) {
-// @media (-moz-bool-pref: "onefire.without-default-colors") {
-// 	@include withoutDefaultColors;
-// }
-
-// @supports -moz-bool-pref("onefire.without-default-colors") {
-// 	@include withoutDefaultColors;
-// }
-
-// @media not (-moz-bool-pref: "onefire.without-default-colors") {
-// 	@include withDefaultColors;
-// }
-
-// @supports not -moz-bool-pref("onefire.without-default-colors") {
-// 	@include withDefaultColors;
-// }
 
 #browser {
 	background: var(--base-bg);
@@ -172,8 +157,8 @@
 
 #sidebar-splitter {
 	opacity: 0;
-	/* display: none; */
-	/*margin-inline: calc(var(--gap) / 2 - 3.5px) !important;*/
+	// display: none;
+	// margin-inline: calc(var(--gap) / 2 - 3.5px) !important;
 	width: var(--gap) !important;
 	min-width: unset !important;
 	border: none !important;
@@ -184,7 +169,7 @@
 #sidebar-box {
 	border-radius: var(--radius);
 	overflow: hidden;
-	/*margin-right: var(--gap);*/
+	// margin-right: var(--gap);
 	max-width: 50dvw;
 	min-width: 50px;
 	padding-top: 0px !important;
@@ -193,14 +178,14 @@
 	background: transparent !important;
 	margin: 0 !important;
 
-	/* background: var(--sidebar-background-color, var(--toolbar-bgcolor, #fff));
-  color: var(--sidebar-text-color, var(--toolbar-color, #000)); */
+	// background: var(--sidebar-background-color, var(--toolbar-bgcolor, #fff));
+	// color: var(--sidebar-text-color, var(--toolbar-color, #000));
 }
 
 #sidebar-header {
 	overflow: hidden;
 	scrollbar-width: none;
-	/*scrollbar-color: rgba(0 0 0 / 0.2) transparent;*/
+	// scrollbar-color: rgba(0 0 0 / 0.2) transparent;
 	border: none !important;
 	border-radius: var(--radius);
 	container-type: inline-size;
@@ -260,15 +245,15 @@
 
 #TabsToolbar tab .tab-background {
 	outline: none !important;
-	/* outline-color: color-mix(in lch, black 20%, var(--lwt-accent-color)) !important; */
+	// outline-color: color-mix(in lch, black 20%, var(--lwt-accent-color)) !important;
 	margin-block: 0 !important;
 	min-height: unset !important;
 }
 
 #PersonalToolbar {
-	/* margin-top: var(--gap); */
+	// margin-top: var(--gap);
 	margin-inline: var(--gap);
-	/* margin-bottom: var(--gap); */
+	// margin-bottom: var(--gap);
 	border-radius: var(--radius);
 	background: var(--toolbar-bg) !important;
 }
@@ -301,7 +286,7 @@
 	border-radius: var(--radius);
 	box-shadow: none !important;
 	margin-top: var(--gap);
-	/* margin-top: -1px; */
+	// margin-top: -1px;
 	margin-inline: var(--gap);
 	background: var(--toolbar-bg) !important;
 }
@@ -324,6 +309,10 @@
 	border-bottom: none !important;
 	margin-bottom: 0 !important;
 
+	@if $defaultColors {
+		background: var(--base-bg) !important;
+	}
+
 	// :not(:has(:root[lwtheme-image] &)) {
 	// 	background: var(--base-bg) !important;
 	// }
@@ -336,8 +325,8 @@
 #TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon,
 #tabbrowser-tabs:not([noshadowfortests])
 	.tab-background:is([selected], [multiselected]) {
-	/* box-shadow: 0 0 4px rgba(0,0,0,0.25) !important; */
-	/* box-shadow: none !important; */
+	// box-shadow: 0 0 4px rgba(0,0,0,0.25) !important;
+	// box-shadow: none !important;
 	box-shadow: 0px 0px 2px rgba(100 100 100 / 0.6) !important;
 }
 
@@ -357,7 +346,7 @@
 	display: none;
 }
 
-// "flexible" space between toolbar buttons
+/* "flexible" space between toolbar buttons */
 toolbarspring {
 	flex: unset !important;
 	width: 1rem;
@@ -381,7 +370,7 @@ toolbarspring {
 	}
 }
 
-// first extension button of group
+/* first extension button of group */
 #nav-bar-customization-target
 	:not(toolbaritem[data-extensionid])
 	+ toolbaritem[data-extensionid] {
@@ -393,7 +382,7 @@ toolbarspring {
 	}
 }
 
-// inbetween extension buttons of group
+/* inbetween extension buttons of group */
 #nav-bar-customization-target
 	toolbaritem[data-extensionid]
 	+ toolbaritem[data-extensionid]:has(+ toolbaritem[data-extensionid]) {
@@ -401,7 +390,7 @@ toolbarspring {
 	// toolbarbutton {}
 }
 
-// last extension button of group
+/* last extension button of group */
 #nav-bar-customization-target
 	:not(toolbaritem[data-extensionid])
 	+ toolbaritem[data-extensionid]
