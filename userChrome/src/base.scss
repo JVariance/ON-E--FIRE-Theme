@@ -82,7 +82,7 @@
 			var(--toolbar-bgcolor, white) 95%,
 			black
 		);
-		--tab-island-bg: color-mix(in hsl, inherit 95%, black);
+		--tab-island-bg: color-mix(in hsl, var(--toolbar-bg, white) 95%, black);
 		--tab-island-blue: #2e78f6;
 		--tab-island-turqouise: #7bc6d7;
 		--tab-island-green: #57bf94;
@@ -117,7 +117,7 @@
 				var(--toolbar-bgcolor, black) 95%,
 				white
 			);
-			--tab-island-bg: color-mix(in hsl, inherit 95%, white);
+			--tab-island-bg: color-mix(in hsl, var(--toolbar-bg, #111) 95%, white);
 		}
 	}
 }
