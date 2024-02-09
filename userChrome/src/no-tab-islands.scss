@@ -1,0 +1,10 @@
+.tabbrowser-tab[usercontextid]
+	> .tab-stack
+	> .tab-background
+	> .tab-context-line {
+	background-color: var(--identity-icon-color);
+	height: 16px !important;
+	margin: 6px 0px 0px 0px !important;
+	width: 3px !important;
+	border-radius: 9999px !important;
+}
