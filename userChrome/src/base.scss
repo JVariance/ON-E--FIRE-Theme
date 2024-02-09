@@ -231,8 +231,10 @@
 }
 
 .tabbrowser-tab {
-	--identity-tab-color: transparent !important;
-	--identity-icon-color: transparent !important;
+	@if $tabIslandsEnabled {
+		--identity-tab-color: transparent !important;
+		--identity-icon-color: transparent !important;
+	}
 	height: 34px !important;
 
 	&[selected="true"] .tab-background {
@@ -385,5 +387,9 @@ toolbarspring {
 	}
 }
 
-@import "./tab-islands.scss";
+@if $tabIslandsEnabled {
+	@import "./tab-islands.scss";
+} @else {
+	@import "./no-tab-islands.scss";
+}
 @import "./sidebar.scss";
