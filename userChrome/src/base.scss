@@ -19,20 +19,26 @@
 
 @if $defaultColors {
 	:root {
-		--base-bg: #d0dbe3;
+		--base-bg: light-dark(#d0dbe3, #030614);
 		--titlebar-bg: transparent;
-		--toolbar-bg: #fff;
-		--tab-selected-bg: #ffffff;
-		--searchbar-bg: #fff;
-		--searchbar-focus-bg: #e7edf1;
-		--sidebar-bg: #fff;
-		--searchbar-color: #000;
+		--toolbar-bg: light-dark(#fff, #252835);
+		--tab-selected-bg: light-dark(#ffffff, #3a3e54);
+		--searchbar-bg: light-dark(#fff, #252835);
+		--searchbar-focus-bg: light-dark(#e7edf1, #484d64);
+		--sidebar-bg: light-dark(#fff, #252835);
+		--searchbar-color: light-dark(#000, #fff);
 		// --sidebar-search-box-bg: #e6eef5;
-		--sidebar-search-box-bg: color-mix(in hsl, white 20%, transparent);
+		--sidebar-search-box-bg: light-dark(
+			color-mix(in hsl, white 20%, transparent),
+			color-mix(in hsl, black 20%, transparent)
+		);
 		// --sidebar-search-image-filter: unset;
-		--sidebar-search-image-filter: brightness(0) opacity(0.5);
-		--toolbar-btn-bg: #e7edf1;
-		--tab-island-bg: #e7edf1;
+		--sidebar-search-image-filter: light-dark(
+			brightness(0) opacity(0.5),
+			brightness(2) opacity(0.5)
+		);
+		--toolbar-btn-bg: light-dark(#e7edf1, #1a1d2b);
+		--tab-island-bg: light-dark(#e7edf1, #1a1d2b);
 		--tab-island-blue: #2e78f6;
 		--tab-island-turqouise: #7bc6d7;
 		--tab-island-green: #57bf94;
@@ -44,23 +50,6 @@
 		--tab-island-purple: #aa78df;
 		--tab-island-tomato: #d62246;
 		--tab-island-toolbar: #858585;
-	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--base-bg: #030614;
-			--toolbar-bg: #252835;
-			--tab-selected-bg: #3a3e54;
-			--searchbar-bg: #252835;
-			--searchbar-color: #fff;
-			--searchbar-focus-bg: #484d64;
-			--sidebar-bg: #252835;
-			--sidebar-search-box-bg: color-mix(in hsl, black 20%, transparent);
-			// --sidebar-search-box-bg: #030615;
-			--sidebar-search-image-filter: brightness(2) opacity(0.5);
-			--toolbar-btn-bg: #1a1d2b;
-			--tab-island-bg: #1a1d2b;
-		}
 	}
 } @else {
 	:root {
@@ -68,21 +57,35 @@
 		--titlebar-bg: inherit;
 		--searchbar-bg: var(--toolbar-field-background-color, transparent);
 		--searchbar-color: var(--toolbar-field-color, currentColor);
-		--tab-selected-bg: var(--tab-selected-bgcolor, white);
-		--toolbar-bg: color-mix(in hsl, var(--toolbar-bgcolor, inherit) 90%, black);
+		--tab-selected-bg: var(--tab-selected-bgcolor, light-dark(white, #111111));
+		--toolbar-bg: color-mix(
+			in hsl,
+			var(--toolbar-bgcolor, inherit) 95%,
+			light-dark(white, black)
+		);
 		--sidebar-bg: color-mix(
 			in hsl,
 			var(--sidebar-background-color, inherit) !important 90%,
-			black
+			light-dark(black, white)
 		);
-		--sidebar-search-box-bg: color-mix(in hsl, black 10%, transparent);
-		--sidebar-search-image-filter: brightness(0) opacity(0.5);
+		--sidebar-search-box-bg: color-mix(
+			in hsl,
+			light-dark(black, white) 10%,
+			transparent
+		);
+		--sidebar-search-image-filter: light-dark(
+			brightness(0) opacity(0.5),
+			brightness(2) opacity(0.5)
+		);
 		--toolbar-btn-bg: color-mix(
 			in hsl,
-			var(--toolbar-bgcolor, white) 95%,
-			black
+			var(--toolbar-bgcolor, light-dark(white, black)) 95%,
+			light-dark(black, white)
 		);
-		--tab-island-bg: color-mix(in hsl, var(--toolbar-bg, white) 95%, black);
+		--tab-island-bg: light-dark(
+			color-mix(in hsl, transparent 92.5%, black),
+			color-mix(in hsl, transparent 92.5%, white)
+		);
 		--tab-island-blue: #2e78f6;
 		--tab-island-turqouise: #7bc6d7;
 		--tab-island-green: #57bf94;
@@ -95,36 +98,12 @@
 		--tab-island-tomato: #d62246;
 		--tab-island-toolbar: #858585;
 	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-			--base-bg: inherit;
-			--toolbar-bg: color-mix(
-				in hsl,
-				var(--toolbar-bgcolor, inherit) 90%,
-				white
-			);
-			--tab-selected-bg: var(--tab-selected-bgcolor, #111111);
-			--sidebar-bg: color-mix(
-				in hsl,
-				var(--sidebar-background-color, inherit) 90%,
-				white
-			);
-			--sidebar-search-box-bg: color-mix(in hsl, white 10%, transparent);
-			--sidebar-search-image-filter: brightness(2) opacity(0.5);
-			--toolbar-btn-bg: color-mix(
-				in hsl,
-				var(--toolbar-bgcolor, black) 95%,
-				white
-			);
-			--tab-island-bg: color-mix(in hsl, var(--toolbar-bg, #111) 95%, white);
-		}
-	}
 }
 
 #browser {
 	background: var(--base-bg);
 	padding: var(--gap);
+	padding-top: 0 !important;
 }
 
 #sidebar-splitter {
@@ -259,7 +238,7 @@
 #nav-bar {
 	border-radius: var(--radius);
 	box-shadow: none !important;
-	margin-top: var(--gap);
+	// margin-top: var(--gap);
 	// margin-top: -1px;
 	margin-inline: var(--gap);
 	background: var(--toolbar-bg) !important;
@@ -282,9 +261,23 @@
 #navigator-toolbox {
 	border-bottom: none !important;
 	margin-bottom: 0 !important;
+	padding-bottom: var(--gap) !important;
+	// border-radius: var(--radius) !important;
 
 	@if $defaultColors {
 		background: var(--base-bg) !important;
+	} @else {
+		&:-moz-lwtheme {
+			background: var(--lwt-accent-color) !important;
+
+			& + #browser {
+				background: var(--lwt-accent-color) !important;
+
+				#sidebar-header {
+					background: var(--toolbar-bg) !important;
+				}
+			}
+		}
 	}
 
 	// :not(:has(:root[lwtheme-image] &)) {
@@ -387,9 +380,14 @@ toolbarspring {
 	}
 }
 
+@import "./tab-islands.scss";
+@import "./no-tab-islands.scss";
+
 @if $tabIslandsEnabled {
-	@import "./tab-islands.scss";
+	// @import "./tab-islands.scss";
+	@include tab-islands();
 } @else {
-	@import "./no-tab-islands.scss";
+	// @import "./no-tab-islands.scss";
+	@include no-tab-islands();
 }
 @import "./sidebar.scss";
