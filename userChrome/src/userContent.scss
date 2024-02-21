@@ -1,0 +1,41 @@
+@-moz-document url("about:home"), url("about:newtab") {
+	:root,
+	:root[lwt-newtab-brighttext] {
+		--newtab-background-color-secondary: color-mix(
+			in srgb,
+			var(--newtab-background-color) 75%,
+			black
+		) !important;
+	}
+
+	.outer-wrapper.fixed-search {
+		.non-collapsible-section {
+			position: sticky !important;
+			z-index: 9 !important;
+			top: 0.25rem !important;
+		}
+
+		.search-wrapper {
+			position: static !important;
+			width: 90% !important;
+			margin-left: 2.5% !important;
+			backdrop-filter: blur(15px) !important;
+			// border: none !important;
+			// box-shadow: 0 0 19px -3px rgba(0 0 0 / 0.5) !important;
+			// background: rgba(255 255 255 / 0.15) !important;
+			// padding: 0.5rem !important;
+			border: 1px solid rgba(255 255 255 / 0.15) !important;
+			box-shadow: none !important;
+			background: transparent !important;
+			padding: 0 !important;
+			border-radius: 6px !important;
+			display: flex !important;
+			align-items: center !important;
+			min-height: unset !important;
+		}
+
+		.search-inner-wrapper {
+			width: 100% !important;
+		}
+	}
+}

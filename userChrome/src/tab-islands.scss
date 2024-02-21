@@ -7,7 +7,7 @@
 
 	/* __________________COLORS__________________ */
 
-	$colors: "blue", "turqouise", "green", "lightgreen", "yellow", "orange", "red",
+	$colors: "blue", "turquoise", "green", "lightgreen", "yellow", "orange", "red",
 		"pink", "purple", "tomato", "toolbar";
 
 	[usercontextid] {
@@ -24,7 +24,34 @@
 		color: light-dark(black, white) !important;
 	}
 
+	#userContext-icons {
+		padding: 0.25rem 0.5rem !important;
+		background: var(--identity-icon-color);
+		border-radius: 9999px !important;
+		gap: 0.25rem !important;
+
+		label {
+			order: 1 !important;
+			margin-top: -2px !important;
+			// color: #fff !important;
+			color: color-mix(in srgb, black 50%, transparent) !important;
+		}
+
+		image {
+			// fill: #fff !important;
+			fill: color-mix(in srgb, black 50%, transparent) !important;
+			margin: 0 !important;
+			width: 14px !important;
+			height: 14px !important;
+		}
+	}
+
 	@each $color in $colors {
+		#page-action-buttons .identity-color-#{$color} {
+			--identity-icon-color: var(--tab-island-#{$color}) !important;
+			--identity-tab-color: var(--tab-island-#{$color}) !important;
+		}
+
 		.tabbrowser-tab.identity-color-#{$color}:has(+ .identity-color-#{$color}) {
 			border-top-right-radius: 0 !important;
 			border-bottom-right-radius: 0 !important;

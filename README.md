@@ -6,8 +6,8 @@
 
 ## Build
 ### Commands
-#### Test
-`sass userChrome/src/withDefaultColorsAndTabIslands.scss:userChrome/dist/withDefaultColorsAndTabIslands/userChrome.css userChrome/src/withDefaultColorsWithoutTabIslands.scss:userChrome/dist/withDefaultColorsWithoutTabIslands/userChrome.css userChrome/src/withoutDefaultColorsAndTabIslands.scss:userChrome/dist/withoutDefaultColorsAndTabIslands/userChrome.css userChrome/src/withoutDefaultColorsWithTabIslands.scss:userChrome/dist/withoutDefaultColorsWithTabIslands/userChrome.css`
+#### Sass
+`sass userChrome/src/withDefaultColorsAndTabIslands.scss:userChrome/dist/withDefaultColorsAndTabIslands/userChrome.css userChrome/src/withDefaultColorsWithoutTabIslands.scss:userChrome/dist/withDefaultColorsWithoutTabIslands/userChrome.css userChrome/src/withoutDefaultColorsAndTabIslands.scss:userChrome/dist/withoutDefaultColorsAndTabIslands/userChrome.css userChrome/src/withoutDefaultColorsWithTabIslands.scss:userChrome/dist/withoutDefaultColorsWithTabIslands/userChrome.css userChrome/src/userContent.scss:userChrome/dist/userContent.css`
 
 #### about:config
 ##### activate multi account containers

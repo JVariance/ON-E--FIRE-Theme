@@ -40,7 +40,7 @@
 		--toolbar-btn-bg: light-dark(#e7edf1, #1a1d2b);
 		--tab-island-bg: light-dark(#e7edf1, #1a1d2b);
 		--tab-island-blue: #2e78f6;
-		--tab-island-turqouise: #7bc6d7;
+		--tab-island-turquoise: #7bc6d7;
 		--tab-island-green: #57bf94;
 		--tab-island-lightgreen: #99d17b;
 		--tab-island-yellow: #eec574;
@@ -87,7 +87,7 @@
 			color-mix(in hsl, transparent 92.5%, white)
 		);
 		--tab-island-blue: #2e78f6;
-		--tab-island-turqouise: #7bc6d7;
+		--tab-island-turquoise: #7bc6d7;
 		--tab-island-green: #57bf94;
 		--tab-island-lightgreen: #99d17b;
 		--tab-island-yellow: #eec574;
@@ -98,6 +98,18 @@
 		--tab-island-tomato: #d62246;
 		--tab-island-toolbar: #858585;
 	}
+}
+
+menu,
+menupopup,
+.menupopup-arrowscrollbox,
+.menupopup {
+	border: 1px solid transparent !important;
+	border: none !important;
+}
+
+hbox.newTabBrowserPanel {
+	padding-top: 0 !important;
 }
 
 #browser {
@@ -118,14 +130,14 @@
 }
 
 #sidebar-box {
-	border-radius: var(--radius);
-	overflow: hidden;
+	border-radius: var(--radius) !important;
+	overflow: hidden !important;
 	// margin-right: var(--gap);
-	max-width: 50dvw;
-	min-width: 50px;
+	max-width: 50dvw !important;
+	min-width: 50px !important;
 	padding-top: 0px !important;
-	z-index: 0;
-	text-shadow: none;
+	z-index: 0 !important;
+	text-shadow: none !important;
 	background: transparent !important;
 	margin: 0 !important;
 
