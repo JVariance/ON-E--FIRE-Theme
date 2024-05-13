@@ -207,6 +207,16 @@ hbox.newTabBrowserPanel {
 	overflow: hidden;
 }
 
+#main-window[sizemode="fullscreen"] {
+	#browser {
+		padding: 0 !important;
+	}
+
+	#appcontent {
+		border-radius: 0 !important;
+	}
+}
+
 #TabsToolbar tab .tab-background {
 	outline: none !important;
 	// outline-color: color-mix(in lch, black 20%, var(--lwt-accent-color)) !important;
