@@ -63,14 +63,15 @@
 			var(--toolbar-bgcolor, inherit) 95%,
 			light-dark(white, black)
 		);
-		--sidebar-bg: color-mix(
-			in hsl,
-			var(--sidebar-background-color, inherit) !important 90%,
-			light-dark(black, white)
-		);
+		// --sidebar-bg: color-mix(
+		// 	in hsl,
+		// 	var(--sidebar-background-color, inherit) !important 90%,
+		// 	light-dark(black, white)
+		// );
+		--sidebar-bg: light-dark(#fff, #252835);
 		--sidebar-search-box-bg: color-mix(
 			in hsl,
-			light-dark(black, white) 10%,
+			light-dark(black, white) 5%,
 			transparent
 		);
 		--sidebar-search-image-filter: light-dark(
@@ -129,8 +130,23 @@ hbox.newTabBrowserPanel {
 	margin-inline-start: unset !important;
 }
 
-#sidebar-box {
+#sidebar-main {
+	margin-top: 0 !important;
 	border-radius: var(--radius) !important;
+	// margin-block: var(--gap) !important;
+	// margin-left: var(--gap) !important;
+	overflow: hidden !important;
+	border-top-right-radius: 0 !important;
+	border-bottom-right-radius: 0 !important;
+	border: 0.5px solid #e3e3e3 !important;
+	border-right-width: 0 !important;
+}
+
+#sidebar-box {
+	border-top-right-radius: var(--radius) !important;
+	border-bottom-right-radius: var(--radius) !important;
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
 	overflow: hidden !important;
 	// margin-right: var(--gap);
 	max-width: 50dvw !important;
@@ -140,6 +156,8 @@ hbox.newTabBrowserPanel {
 	text-shadow: none !important;
 	background: transparent !important;
 	margin: 0 !important;
+	padding: 0 !important;
+	box-shadow: none !important;
 
 	// background: var(--sidebar-background-color, var(--toolbar-bgcolor, #fff));
 	// color: var(--sidebar-text-color, var(--toolbar-color, #000));
@@ -179,9 +197,17 @@ hbox.newTabBrowserPanel {
 }
 
 #sidebar {
-	border-radius: var(--radius) !important;
-	margin-top: var(--gap) !important;
+	// border-radius: var(--radius) !important;
+	// margin-top: var(--gap) !important;
 	background: var(--sidebar-bg) !important;
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	border-left-width: 0 !important;
+	box-shadow: none !important;
+}
+
+.sidebar-panel {
+	border-radius: 0 !important;
 }
 
 .sidebar-panel[lwt-sidebar] {
@@ -205,6 +231,8 @@ hbox.newTabBrowserPanel {
 #appcontent {
 	border-radius: var(--radius);
 	overflow: hidden;
+	box-shadow: none !important;
+	border: 0.5px solid #e3e3e3 !important;
 }
 
 #main-window[sizemode="fullscreen"] {
